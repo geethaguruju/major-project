@@ -1,5 +1,5 @@
 String mapBoxApiKey =
-    'pk.eyJ1Ijoic2F1cmFiaG13IiwiYSI6ImNreTRiYzNidjBhMTkydnB2dmpoeGt4ZmgifQ.2QZ4CsNiygDTAhkqASpbPg';
+    'pk.eyJ1IjoibWFqb3Jwcm9qZWN0dGVhbSIsImEiOiJjbDZxcmh2dmcwZDJjM2puMmU1ZnEyMXppIn0.ueQor6666AMSWPFmhyln7w';
 
 String nftStorageApiKey =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDJmNGUwQTQwNTI4MkMyMDNkZDBEZmY2NUNlMkUwRTYyQUNCODFDRWUiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTYzNzkwNzQxNjEwNSwibmFtZSI6ImxhbmRfZG9jdW1lbnQifQ.5ReEuIxsDhWxOLa2lVe9n-B2PUjdEkwJ5jLsBGdBDGA';
