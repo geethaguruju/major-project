@@ -8,6 +8,6 @@ const String rpcUrl =
     //"https://ropsten.infura.io/v3/e43345b7383246378963be7acd5b6c67";
 "http://127.0.0.1:7545";
 
-const String contractAddress = "0xed690C24C60A48F8A9819c9A15AD75B70CFBEa5a";
+const String contractAddress = "0x65a136899067D9f17ca7149CDEAb67E8e8Aec638";
 
 const int chainId = 1337; //Ropsten-3, Polygon testnet-80001, local ganache-1337
