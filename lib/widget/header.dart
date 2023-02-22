@@ -158,7 +158,7 @@ class HeaderWidget extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
+            /*Padding(
               padding: const EdgeInsets.all(14.0),
               child: GestureDetector(
                 onTap: () async {
@@ -185,8 +185,8 @@ class HeaderWidget extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            Padding(
+            ),*/
+            /*Padding(
               padding: const EdgeInsets.all(14.0),
               child: IconButton(
                 onPressed: () {
@@ -202,7 +202,7 @@ class HeaderWidget extends StatelessWidget {
                   fit: BoxFit.fill,
                 ),
               ),
-            ),
+            ),*/
           ],
         )
       ],

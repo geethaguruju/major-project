@@ -19,9 +19,9 @@ class LeftDescription extends StatelessWidget {
       children: <Widget>[
         // title
         const FittedBox(
-          child: Text('''Land
-Registration Using
-Blockchain''',
+          child: Text('''Blockchain based 
+Land Registry System with 
+Biometric Authentication''',
               style: TextStyle(
                 fontFamily: 'Poppins',
                 color: Color(0xff28313b),
@@ -40,12 +40,12 @@ Blockchain''',
           children: <Widget>[
             // button
             InkWell(
-              onTap: () {},
+              onTap: () {launchUrl("https://www.google.com");},
               child: Container(
                   width: 150,
                   height: 57,
                   child: const Center(
-                    child: Text("Learn More",
+                    child: Text("About",
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           color: Color(0xffffffff),
@@ -59,9 +59,9 @@ Blockchain''',
                       color: const Color(0xff47afc9),
                       borderRadius: BorderRadius.circular(8))),
             ),
-            //
+            
             const SizedBox(width: 40),
-            GestureDetector(
+            /*GestureDetector(
               onTap: () {
                 launchUrl("https://youtu.be/0Coz_ivOaHs");
               },
@@ -94,7 +94,7 @@ Blockchain''',
                   ],
                 ),
               ),
-            ),
+            ),*/
           ],
         ),
         const SizedBox(

@@ -109,6 +109,10 @@ class _RegisterUserState extends State<RegisterUser> {
     }
     setState(() {});
   }
+  /*imageCapture() async {
+    
+    
+  }*/
 
   Future<bool> uploadDocument() async {
     String url = "https://api.nft.storage/upload";
@@ -128,7 +132,7 @@ class _RegisterUserState extends State<RegisterUser> {
         }
       } catch (e) {
         print(e);
-        showToast("Something went wrong,while document uploading",
+        showToast("Something went wrong while uploading document",
             context: context, backgroundColor: Colors.red);
       }
     } else {
@@ -262,10 +266,39 @@ class _RegisterUserState extends State<RegisterUser> {
                     padding: const EdgeInsets.all(10),
                     child: TextFormField(
                       validator: (value) {
+                        RegExp regex = RegExp(
+                            r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]"
+                            r"{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]"
+                            r"{0,253}[a-zA-Z0-9])?)*$");
+                        if (!regex.hasMatch(value!) || value == null)
+                          return 'Enter a valid email address';
+                        else
+                          return null;
+                      },
+                      style: const TextStyle(
+                        fontSize: 15,
+                      ),
+                      onChanged: (val) {
+                        email = val;
+                      },
+                      //obscureText: true,
+                      decoration: const InputDecoration(
+                        isDense: true, // Added this
+                        contentPadding: EdgeInsets.all(12),
+                        border: OutlineInputBorder(),
+                        labelText: 'Email',
+                        hintText: 'Enter Email',
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: TextFormField(
+                      validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter Adhar number';
+                          return 'Please enter Aadhar number';
                         } else if (value.length != 12)
-                          return 'Please enter Valid Adhar number';
+                          return 'Please enter Valid Aadhar number';
                         return null;
                       },
                       //maxLength: 12,
@@ -284,8 +317,8 @@ class _RegisterUserState extends State<RegisterUser> {
                         isDense: true, // Added this
                         contentPadding: EdgeInsets.all(12),
                         border: OutlineInputBorder(),
-                        labelText: 'Adhar',
-                        hintText: 'Enter Adhar Number',
+                        labelText: 'Aadhar',
+                        hintText: 'Enter Aadhar Number',
                       ),
                     ),
                   ),
@@ -296,7 +329,7 @@ class _RegisterUserState extends State<RegisterUser> {
                         if (value == null || value.isEmpty) {
                           return 'Please enter Pan Number';
                         } else if (value.length != 10)
-                          return 'Please enter Valid Adhar number';
+                          return 'Please enter Valid Pan number';
                         return null;
                       },
                       style: const TextStyle(
@@ -330,37 +363,22 @@ class _RegisterUserState extends State<RegisterUser> {
                       ],
                     ),
                   ),
-                  Padding(
+                  /*Padding(
                     padding: const EdgeInsets.all(10),
-                    child: TextFormField(
-                      validator: (value) {
-                        RegExp regex = RegExp(
-                            r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]"
-                            r"{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]"
-                            r"{0,253}[a-zA-Z0-9])?)*$");
-                        if (!regex.hasMatch(value!) || value == null)
-                          return 'Enter a valid email address';
-                        else
-                          return null;
-                      },
-                      style: const TextStyle(
-                        fontSize: 15,
-                      ),
-                      onChanged: (val) {
-                        email = val;
-                      },
-                      //obscureText: true,
-                      decoration: const InputDecoration(
-                        isDense: true, // Added this
-                        contentPadding: EdgeInsets.all(12),
-                        border: OutlineInputBorder(),
-                        labelText: 'Email',
-                        hintText: 'Enter Email',
-                      ),
+                    child: Row(
+                      children: [
+                        MaterialButton(
+                          color: Colors.grey,
+                          onPressed: imageCapture ,
+                          child: const Text('Capture Image'),
+                        ),
+                        Text(docuName)
+                      ],
                     ),
-                  ),
+                  ),*/
+                  
                   isAdded
-                      ? CustomButton('Contine to Login', () {
+                      ? CustomButton('Continue to Login', () {
                           Navigator.pop(context);
                           // Navigator.push(
                           //     context,
@@ -371,7 +389,7 @@ class _RegisterUserState extends State<RegisterUser> {
                           );
                         })
                       : CustomButton(
-                          'Add',
+                          'Register',
                           isLoading
                               ? null
                               : () async {
