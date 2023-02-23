@@ -18,7 +18,7 @@ class LandInspector extends StatefulWidget {
 
 class _LandInspectorState extends State<LandInspector> {
   var model, model2;
-  final colors = <Color>[Colors.indigo, Colors.blue, Colors.orange, Colors.red];
+  final colors = <Color>[Colors.indigo.shade100, Colors.deepPurple.shade100, Colors.purple.shade100, Colors.red];
   List<List<dynamic>> userData = [];
   List<List<dynamic>> landData = [];
   List<List<dynamic>> paymenList = [];
@@ -33,7 +33,7 @@ class _LandInspectorState extends State<LandInspector> {
     Menu(title: 'Verify User', icon: Icons.verified_user),
     Menu(title: 'Verify Land', icon: Icons.web),
     Menu(title: 'Transfer Ownership', icon: Icons.transform),
-    Menu(title: 'Logout', icon: Icons.logout),
+    Menu(title: 'Sign out', icon: Icons.logout),
   ];
 
   getUserCount() async {
@@ -58,9 +58,10 @@ class _LandInspectorState extends State<LandInspector> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: const Text("LandInspector Dashboard"),
+        title: const Text("Dashboard"),
         centerTitle: true,
-        backgroundColor: const Color(0xFF272D34),
+        backgroundColor: const Color(0xFF1A237E),
+          //0xFF272D34),
         leading: isDesktop
             ? Container()
             : GestureDetector(
@@ -197,7 +198,7 @@ class _LandInspectorState extends State<LandInspector> {
                   ),
                   Expanded(
                     child: Center(
-                      child: Text('SurveyNo.',
+                      child: Text('Survey No.',
                           style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                     flex: 2,
@@ -349,7 +350,7 @@ class _LandInspectorState extends State<LandInspector> {
                     ),
                     Expanded(
                         child: Center(
-                          child: Text('Address',
+                          child: Text('Wallet Address',
                               style: TextStyle(fontWeight: FontWeight.bold)),
                         ),
                         flex: 5),
@@ -531,13 +532,13 @@ class _LandInspectorState extends State<LandInspector> {
                     ),
                     Expanded(
                         child: Center(
-                          child: Text('Seller Address',
+                          child: Text('Seller\'s Address',
                               style: TextStyle(fontWeight: FontWeight.bold)),
                         ),
                         flex: 6),
                     Expanded(
                       child: Center(
-                        child: Text('Buyer Address',
+                        child: Text('Buyer\'s Address',
                             style: TextStyle(fontWeight: FontWeight.bold)),
                       ),
                       flex: 6,
@@ -685,7 +686,7 @@ class _LandInspectorState extends State<LandInspector> {
                   ),
                 if (index == 0)
                   const Text(
-                    'Total Users Registered',
+                    'Total No of Registered Users',
                     style: TextStyle(fontSize: 20),
                   ),
                 if (index == 1)
@@ -700,10 +701,10 @@ class _LandInspectorState extends State<LandInspector> {
                     ],
                   ),
                 if (index == 1)
-                  const Text('Total Property Registered',
+                  const Text('Total Properties Registered',
                       style: TextStyle(fontSize: 20)),
                 if (index == 2)
-                  const Text('Total Property Transfered ',
+                  const Text('Total Properties Transfered ',
                       style: TextStyle(fontSize: 20)),
               ],
             ),
@@ -719,7 +720,7 @@ class _LandInspectorState extends State<LandInspector> {
         boxShadow: [
           BoxShadow(blurRadius: 10, color: Colors.black26, spreadRadius: 2)
         ],
-        color: Color(0xFF272D34),
+        color: Color(0xFF1A237E),
       ),
       width: 250,
       child: Column(
@@ -738,7 +739,7 @@ class _LandInspectorState extends State<LandInspector> {
           ),
           const Text('Ramya',
               style: TextStyle(
-                  color: Colors.white70,
+                  color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.bold)),
           const SizedBox(

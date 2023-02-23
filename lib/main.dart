@@ -46,6 +46,7 @@ class _MyAppState extends State<MyApp> {
         initialRoute: '/',
         onGenerateRoute: RouteGenerator.generateRoute,
         // home: home_page(),
+        theme: ThemeData( scaffoldBackgroundColor: const Color(0xFFECEFF1),),
       ),
     );
   }

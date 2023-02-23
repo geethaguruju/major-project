@@ -41,7 +41,7 @@ class _AddLandInspectorState extends State<AddLandInspector> {
       key: _scaffoldKey,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: const Color(0xFF272D34),
+        backgroundColor: const Color(0xFF1A237E),
         leading: isDesktop
             ? Container()
             : GestureDetector(
@@ -438,7 +438,7 @@ class _AddLandInspectorState extends State<AddLandInspector> {
         boxShadow: [
           BoxShadow(blurRadius: 10, color: Colors.black26, spreadRadius: 2)
         ],
-        color: Color(0xFF272D34),
+        color: Color(0xFF1A237E),
       ),
       width: 260,
       child: Column(

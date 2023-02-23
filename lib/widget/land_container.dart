@@ -27,7 +27,7 @@ Widget landWid(isverified, area, address, price, isForSell, makeforSellFun) =>
             width: 400,
             color: Colors.lightGreenAccent,
             child: Image.asset(
-              'assets/landimg.jpg',
+              'land.jpg',
               fit: BoxFit.fill,
             ),
           ),
@@ -83,7 +83,7 @@ Widget landWid(isverified, area, address, price, isForSell, makeforSellFun) =>
                       child: const Text('Make it for Sell'),
                     ),
               MaterialButton(
-                color: Colors.blueAccent,
+                color: Colors.blue.shade200,
                 onPressed: () {},
                 child: const Text('View Details'),
               )
@@ -118,7 +118,7 @@ Widget landWid2(isverified, area, address, price, isMyLand, isForSell,
             width: 400,
             color: Colors.lightGreenAccent,
             child: Image.asset(
-              'assets/landimg.jpg',
+              'land2.jpg',
               fit: BoxFit.fill,
             ),
           ),
@@ -178,7 +178,7 @@ Widget landWid2(isverified, area, address, price, isMyLand, isForSell,
                           : Text('Not for sell yet'),
                     ),
               MaterialButton(
-                color: Colors.blueAccent,
+                color: Colors.blue.shade200,
                 onPressed: viewDetailsFun,
                 child: const Text('View Details'),
               )

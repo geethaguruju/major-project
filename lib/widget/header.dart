@@ -19,7 +19,7 @@ class HeaderWidget extends StatelessWidget {
       children: <Widget>[
         // logo
         const Text(
-          'Land Registry',
+          'Land Registry - 19B03',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
 
@@ -73,7 +73,7 @@ class HeaderWidget extends StatelessWidget {
                     appContainer?.style.cursor = 'default';
                   },
                   child: const Text(
-                    'User',
+                    'SignUp/SignIn',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       color: Color(0xff28313b),

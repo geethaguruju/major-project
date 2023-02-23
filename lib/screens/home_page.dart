@@ -44,7 +44,7 @@ class _home_pageState extends State<home_page> {
                       width: 600,
                       height: 804,
                       child: SvgPicture.asset(
-                        'assets/background_svg.svg',
+                        'location_icon.svg',
                         height: 20.0,
                         width: 20.0,
                         allowDrawingOutsideViewBox: true,
@@ -53,7 +53,7 @@ class _home_pageState extends State<home_page> {
                   )
                 ],
               ),
-            ),
+            ),/*
             const SizedBox(
               height: 100,
             ),
@@ -100,7 +100,7 @@ class _home_pageState extends State<home_page> {
             ),
             const SizedBox(
               height: 100,
-            ),
+            ),*/
           ],
         ),
         // Center is a layout widget. It takes a single child and positions it

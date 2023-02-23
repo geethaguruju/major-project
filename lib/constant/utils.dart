@@ -250,12 +250,12 @@ Widget CustomTextFiled(text, label) => Padding(
           fontSize: 15,
         ),
         decoration: InputDecoration(
-            isDense: true, // Added this
-            contentPadding: const EdgeInsets.all(12),
-            border: const OutlineInputBorder(),
+            //isDense: true, // Added this
+            contentPadding: const EdgeInsets.all(10),
+            //border: const OutlineInputBorder(),
             labelText: label,
             labelStyle: const TextStyle(fontSize: 20),
-            fillColor: Colors.grey,
+            fillColor: Colors.white70,
             filled: true),
       ),
     );

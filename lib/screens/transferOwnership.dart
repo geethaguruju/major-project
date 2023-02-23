@@ -42,13 +42,14 @@ class _transferOwnershipState extends State<transferOwnership> {
   bool isFirstTimeLoad = true, isLoading = true;
   late CameraController controller, controller2, controller3;
   XFile? pictureFile;
-  late Uint8List sellerPictureBytes, buyerPictureBytes, witnessPictureBytes;
+  late Uint8List sellerPictureBytes, buyerPictureBytes;
+  //, witnessPictureBytes;
   bool isSellerpicturetaken = false,
-      isBuyerpicturetaken = false,
-      isWitnesspicturetaken = false;
+      isBuyerpicturetaken = false;
+      //isWitnesspicturetaken = false;
   bool cameraInilizing = true, isOwnershipTransfered = false;
   final pdf = pw.Document();
-  String witnessName = "", witnessAge = "", witnessAddress = "";
+  //String witnessName = "", witnessAge = "", witnessAddress = "";
   late List<CameraDescription> cameras;
   String documentId = "", docUrl = "";
 
@@ -89,12 +90,12 @@ class _transferOwnershipState extends State<transferOwnership> {
               crossAxisAlignment: pw.CrossAxisAlignment.start,
               children: [
                 pw.Center(
-                  child: pw.Text('Index No. 2'),
+                  child: pw.Text('Index N0. 2'),
                 ),
                 pw.SizedBox(height: 10),
                 pw.Divider(),
                 pw.Center(
-                  child: pw.Text('Villege Name: ' + villegename),
+                  child: pw.Text('Mandal: ' + villegename),
                 ),
                 pw.Divider(),
                 pw.SizedBox(height: 14),
@@ -102,36 +103,36 @@ class _transferOwnershipState extends State<transferOwnership> {
                   1: const pw.FractionColumnWidth(0.8),
                   2: const pw.FractionColumnWidth(0.2),
                 }, children: [
-                  tableRow("1)Type of Document:", "Sale Deed"),
+                  tableRow("(1)Type of Deed:", "Land Sale Deed"),
                   tableRowSizedBox(),
-                  tableRow("2)Compensation:", price),
+                  tableRow("(2)Compensation Amount:", price),
                   tableRowSizedBox(),
-                  tableRow("3)Market Price:", price),
+                  tableRow("(3)Market Price:", price),
                   tableRowSizedBox(),
-                  tableRow("4)Survey No.:", surveyno),
+                  tableRow("(4)Survey Number,sub-division, or house number:", surveyno),
                   tableRowSizedBox(),
-                  tableRow("5)Area:", area),
+                  tableRow("(5)Area:", area),
                   tableRowSizedBox(),
                   tableRow(
-                      "6)Seller Name and Address:",
+                      "(6)First Party Details:",
                       sellername +
                           ',' +
                           selleraddress +
                           ',Pan no.:' +
                           sellerpan),
                   tableRowSizedBox(),
-                  tableRow("7)Buyer name and Address",
+                  tableRow("(7)Second Party Details:",
                       buyername + ',' + buyeraddress + ',Pan no.:' + buyerpan),
                   tableRowSizedBox(),
-                  tableRow("8)Document written Date:", date),
+                  tableRow("(8)Document written Date:", date),
                   tableRowSizedBox(),
-                  tableRow("9)Document Registrtion Date:", date),
+                  tableRow("(9) Date of Registrtion:", date),
                   tableRowSizedBox(),
-                  tableRow("10)Stamp Duty paid amount:", "Rs6000"),
+                  tableRow("10)Stamp Duty paid amount:", "Rs 6000"),
                   tableRowSizedBox(),
                   tableRow("11)Registration Serial No.:", "613"),
                   tableRowSizedBox(),
-                  tableRow("12)Registration Fee:", "Rs.5000"),
+                  tableRow("12)Registration Fees:", "Rs.5000"),
                   tableRowSizedBox(),
                 ]),
                 pw.Divider(height: 2),
@@ -156,7 +157,7 @@ class _transferOwnershipState extends State<transferOwnership> {
                       pw.Text('Document No.:' + documentId),
                     ]),
                 pw.Divider(),
-                pw.Text('Type of Document: Sale Deed'),
+                pw.Text('Type of Document: Land Sale Deed'),
                 pw.Text('Document No.:' + documentId),
                 pw.Divider(),
                 pw.Table(columnWidths: {
@@ -215,7 +216,7 @@ class _transferOwnershipState extends State<transferOwnership> {
                     pw.SizedBox(height: 5),
                     pw.SizedBox(height: 5)
                   ]),
-                  pw.TableRow(children: [
+                  /*pw.TableRow(children: [
                     pw.Text("Name:" +
                         witnessName +
                         "\nAddress:" +
@@ -227,7 +228,7 @@ class _transferOwnershipState extends State<transferOwnership> {
                     pw.Container(
                         child: pw.Image(pw.MemoryImage(witnessPictureBytes),
                             height: 150, width: 265)),
-                  ]),
+                  ]),*/
                 ]),
                 pw.Text("Timestamp: " + date)
               ]);
@@ -372,7 +373,7 @@ class _transferOwnershipState extends State<transferOwnership> {
                         landInfo[6].toString(),
                         landInfo[7].toString(),
                       ),
-                      takeWitnessInfo()
+                      //takeWitnessInfo()
                     ],
                   ),
                   const SizedBox(
@@ -407,11 +408,13 @@ class _transferOwnershipState extends State<transferOwnership> {
                           ? null
                           : () async {
                               if (isBuyerpicturetaken &&
-                                  isSellerpicturetaken &&
-                                  isWitnesspicturetaken &&
-                                  witnessName != "" &&
-                                  witnessAge != "" &&
-                                  witnessAddress != "") {
+                                  isSellerpicturetaken 
+                                  //&&
+                                  //isWitnesspicturetaken &&
+                                  //witnessName != "" &&
+                                  //witnessAge != "" &&
+                                  //witnessAddress != ""
+                                  ) {
                                 SmartDialog.showLoading(msg: "Please Wait");
                                 await generateDocument(
                                     landInfo[2],
@@ -446,7 +449,7 @@ class _transferOwnershipState extends State<transferOwnership> {
             ),
     );
   }
-
+/*
   Widget takeWitnessInfo() {
     return Container(
       width: width,
@@ -559,7 +562,7 @@ class _transferOwnershipState extends State<transferOwnership> {
           ]),
     );
   }
-
+*/
   Widget sellerProfile(
       sellerOrBuyer, walletAddres, name, age, city, adhar, pan, docu, mail) {
     //if (isLoading) return CircularProgressIndicator();

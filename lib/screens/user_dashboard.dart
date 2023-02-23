@@ -48,13 +48,13 @@ class _UserDashBoardState extends State<UserDashBoard> {
   List<List<dynamic>> sentRequestInfo = [];
   List<dynamic> prices = [];
   List<Menu> menuItems = [
-    Menu(title: 'Dashboard', icon: Icons.dashboard),
-    Menu(title: 'Add Lands', icon: Icons.add_chart),
+    Menu(title: 'Profile', icon: Icons.dashboard),
+    Menu(title: 'Add Land', icon: Icons.add_chart),
     Menu(title: 'My Lands', icon: Icons.landscape_rounded),
     Menu(title: 'Land Gallery', icon: Icons.landscape_rounded),
-    Menu(title: 'My Received Request', icon: Icons.request_page_outlined),
-    Menu(title: 'My Sent Land Request', icon: Icons.request_page_outlined),
-    Menu(title: 'Logout', icon: Icons.logout),
+    Menu(title: 'Received Requests', icon: Icons.request_page_outlined),
+    Menu(title: 'Sent Land Requests', icon: Icons.request_page_outlined),
+    Menu(title: 'Signout', icon: Icons.logout),
   ];
   Map<String, String> requestStatus = {
     '0': 'Pending',
@@ -335,7 +335,7 @@ class _UserDashBoardState extends State<UserDashBoard> {
       key: _scaffoldKey,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: const Color(0xFF272D34),
+        backgroundColor: const Color(0xFF311B92),
         leading: isDesktop
             ? Container()
             : GestureDetector(
@@ -809,7 +809,7 @@ Widget sentRequest() {
         margin: const EdgeInsets.all(10),
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-            //color: Color(0xFFBb3b3cc),
+            color: Colors.white,
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             border: Border.all()),
         width: width,
@@ -820,10 +820,10 @@ Widget sentRequest() {
             // shrinkWrap: true,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.all(15),
                 child: TextFormField(
                   style: const TextStyle(
-                    fontSize: 15,
+                    fontSize: 17,
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -839,9 +839,9 @@ Widget sentRequest() {
                     FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))
                   ],
                   decoration: const InputDecoration(
-                    isDense: true, // Added this
+                   // isDense: true, // Added this
                     contentPadding: EdgeInsets.all(12),
-                    border: OutlineInputBorder(),
+                    //border: OutlineInputBorder(),
                     labelText: 'Area(SqFt)',
                     hintText: 'Enter Area in SqFt',
                   ),
@@ -859,7 +859,7 @@ Widget sentRequest() {
                       return null;
                     },
                     style: const TextStyle(
-                      fontSize: 15,
+                      fontSize: 17,
                     ),
                     controller: addressController,
                     onChanged: (value) {
@@ -879,9 +879,9 @@ Widget sentRequest() {
                     focusNode: _focusNode,
                     //obscureText: true,
                     decoration: const InputDecoration(
-                      isDense: true, // Added this
+                      //isDense: true, // Added this
                       contentPadding: EdgeInsets.all(12),
-                      border: OutlineInputBorder(),
+                      //border: OutlineInputBorder(),
                       labelText: 'Address',
                       hintText: 'Enter Land Address',
                     ),
@@ -899,7 +899,7 @@ Widget sentRequest() {
                   },
                   //maxLength: 12,
                   style: const TextStyle(
-                    fontSize: 15,
+                    fontSize: 17,
                   ),
                   keyboardType: TextInputType.number,
                   inputFormatters: <TextInputFormatter>[
@@ -910,9 +910,9 @@ Widget sentRequest() {
                   },
                   //obscureText: true,
                   decoration: const InputDecoration(
-                    isDense: true, // Added this
+                    //isDense: true, // Added this
                     contentPadding: EdgeInsets.all(12),
-                    border: OutlineInputBorder(),
+                    //border: OutlineInputBorder(),
                     labelText: 'Land Price',
                     hintText: 'Enter Land Price',
                   ),
@@ -928,7 +928,7 @@ Widget sentRequest() {
                     return null;
                   },
                   style: const TextStyle(
-                    fontSize: 15,
+                    fontSize: 17,
                   ),
                   //maxLength: 10,
                   keyboardType: TextInputType.number,
@@ -940,9 +940,9 @@ Widget sentRequest() {
                   },
                   //obscureText: true,
                   decoration: const InputDecoration(
-                    isDense: true, // Added this
+                    //isDense: true, // Added this
                     contentPadding: EdgeInsets.all(12),
-                    border: OutlineInputBorder(),
+                    //border: OutlineInputBorder(),
                     labelText: 'PID',
                     hintText: 'Enter Property ID',
                   ),
@@ -961,13 +961,13 @@ Widget sentRequest() {
                     surveyNo = val;
                   },
                   style: const TextStyle(
-                    fontSize: 15,
+                    fontSize: 17,
                   ),
                   //obscureText: true,
                   decoration: const InputDecoration(
-                    isDense: true, // Added this
+                    //isDense: true, // Added this
                     contentPadding: EdgeInsets.all(12),
-                    border: OutlineInputBorder(),
+                    //border: OutlineInputBorder(),
                     labelText: 'Survey No.',
                     hintText: 'Survey No.',
                   ),
@@ -976,7 +976,7 @@ Widget sentRequest() {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: MaterialButton(
-                  color: Colors.grey,
+                  color: Colors.blue,
                   onPressed: () async {
                     allLatiLongi = await Navigator.push(
                         context,
@@ -1082,7 +1082,7 @@ Widget sentRequest() {
           margin: const EdgeInsets.all(10),
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-              //color: Color(0xFFBb3b3cc),
+              color: Colors.white,
               borderRadius: const BorderRadius.all(Radius.circular(10)),
               border: Border.all()),
           child: Column(
@@ -1090,7 +1090,7 @@ Widget sentRequest() {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Your Profile',
+                'My Profile',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               userInfo[8]
@@ -1142,7 +1142,7 @@ Widget sentRequest() {
         boxShadow: [
           BoxShadow(blurRadius: 10, color: Colors.black26, spreadRadius: 2)
         ],
-        color: Color(0xFF272D34),
+        color: Color(0xFF1A237E),
       ),
       width: 250,
       child: Column(

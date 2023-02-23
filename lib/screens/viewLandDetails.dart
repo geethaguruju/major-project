@@ -29,7 +29,7 @@ class _viewLandDetailsState extends State<viewLandDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFF272D34),
+        backgroundColor: const Color(0xFF1A237E),
         title: const Text('Land Details'),
       ),
       body: SingleChildScrollView(
@@ -47,7 +47,8 @@ class _viewLandDetailsState extends State<viewLandDetails> {
                 child: MapboxMap(
                     accessToken: mapBoxApiKey,
                     styleString:
-                        "mapbox://styles/saurabhmw/cky4ce7f61b2414nuh9ng177k",
+                          "mapbox://styles/mapbox/satellite-streets-v12",
+                        //"mapbox://styles/saurabhmw/cky4ce7f61b2414nuh9ng177k",
                     initialCameraPosition: CameraPosition(
                       zoom: 3.0,
                       target: const LatLng(19.663280, 75.300293),

@@ -40,12 +40,12 @@ Biometric Authentication''',
           children: <Widget>[
             // button
             InkWell(
-              onTap: () {launchUrl("https://www.google.com");},
+              onTap: () {launchUrl("https://www.ibm.com/topics/what-is-blockchain");},
               child: Container(
                   width: 150,
                   height: 57,
                   child: const Center(
-                    child: Text("About",
+                    child: Text("Learn More",
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           color: Color(0xffffffff),
