@@ -923,7 +923,7 @@ Widget sentRequest() {
                 child: TextFormField(
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter PID';
+                      return 'Please enter Property ID';
                     }
                     return null;
                   },
@@ -943,7 +943,7 @@ Widget sentRequest() {
                     //isDense: true, // Added this
                     contentPadding: EdgeInsets.all(12),
                     //border: OutlineInputBorder(),
-                    labelText: 'PID',
+                    labelText: 'Property ID',
                     hintText: 'Enter Property ID',
                   ),
                 ),

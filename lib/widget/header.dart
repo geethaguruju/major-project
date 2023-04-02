@@ -19,7 +19,7 @@ class HeaderWidget extends StatelessWidget {
       children: <Widget>[
         // logo
         const Text(
-          'Land Registry - 19B03',
+          'Team 19B03',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
 
