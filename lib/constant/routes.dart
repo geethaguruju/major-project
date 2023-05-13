@@ -5,10 +5,12 @@ import 'package:land_registration/screens/addLandInspector.dart';
 import 'package:land_registration/screens/home_page.dart';
 import 'package:land_registration/screens/registerUser.dart';
 import 'package:land_registration/screens/wallet_connect.dart';
+import 'package:land_registration/screens/otp_auth.dart';
 
 class RoutesName {
   static const String HOME_PAGE = '/';
   static const String LOGIN_PAGE = '/login';
+  static const String AUTH_PAGE='/auth';
   static const String USER_PAGE = '/userdahsboard';
 }
 
@@ -16,7 +18,7 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // Getting arguments passed in while calling Navigator.pushNamed
     final args = settings.arguments;
-
+    final args2= "123355";
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(
@@ -31,6 +33,16 @@ class RouteGenerator {
             ),
             settings: const RouteSettings(name: '/login'),
           );
+        }
+        return _errorRoute();
+      case '/auth':
+        if(args2 is String) {
+          return MaterialPageRoute(
+            builder: (_) => CheckOtp(
+              val: args2,
+            ),
+          settings: const RouteSettings(name: '/auth'),
+        );
         }
         return _errorRoute();
       case '/user':

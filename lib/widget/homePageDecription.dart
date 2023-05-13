@@ -21,7 +21,7 @@ class LeftDescription extends StatelessWidget {
         const FittedBox(
           child: Text('''Blockchain based 
 Land Registry System with 
-Biometric Authentication''',
+Aadhar Authentication''',
               style: TextStyle(
                 fontFamily: 'Poppins',
                 color: Color(0xff28313b),

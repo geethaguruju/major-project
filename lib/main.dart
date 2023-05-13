@@ -5,6 +5,9 @@ import 'package:provider/provider.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'constant/routes.dart';
 import 'providers/MetamaskProvider.dart';
+import 'dart:async'; 
+import 'dart:convert'; 
+import 'package:http/http.dart' as http;
 
 void main() {
   setPathUrlStrategy();
